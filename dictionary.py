@@ -23,21 +23,22 @@ while True:
     
 # Option 1 - Add an Item from user
     if user_in == 1:
+        register= str(input("Kindly Register your Name:")); register.title()
         add_in= int(input("                                                  \033[32m \033[01m How Many Infos do you want to Add?:\33[0m "))  
         print('\n \n')
-        u_name= input("   \033[01mKindly input your Full Name:\33[0m ").title()
+        u_name= input("   \033[01mKindly input your Full Name:\33[0m ")
         print("")
         u_age=str(input("   \033[01mKindly input your Age:\33[0m "))
         print()
-        u_gender= str(input("   \033[01mKindly input your Gender (F/M):\33[0m ")).title()
+        u_gender= str(input("   \033[01mKindly input your Gender (F/M):\33[0m "))
         print()
-        u_status=input("  \033[01m Kindly input your Status:\33[0m ").title()
+        u_status=input("  \033[01m Kindly input your Status:\33[0m ")
         print()
-        u_num = str(input("   \033[01mKindly input your Phone Number:\33[0m ")).title()
+        u_num = str(input("   \033[01mKindly input your Phone Number:\33[0m "))
         print()
-        u_add = input("   \033[01mKindly input your Address:\33[0m ").title()
+        u_add = input("   \033[01mKindly input your Address:\33[0m ")
         print()
-        u_occu = (input("   \033[01mKindly input your Occupation:\33[0m " )).title()
+        u_occu = input("   \033[01mKindly input your Occupation:\33[0m " )
         print ('\n')
         print("=======================================================================================================================================================================")
         print('\n')
@@ -46,32 +47,29 @@ while True:
         print("=======================================================================================================================================================================")
         print ('\n \n')
 
-        info[u_name]= [u_age,  u_gender, u_status, u_num, u_add, u_occu]
-        new_info = info
-        
-        
+        info[register]= {"Name":u_name, "Age" : u_age,"Gender" : u_gender, "Status" : u_status,"Phone Number" : u_num, "Address" : u_add, "Occupation" : u_occu}        
+    
              
 # Option 2
     elif user_in == 2:
-        print("                                                    \033[32m \033[01m Information you want to search?:\33[0m ")  
-        search= input().title()
-        resp=info.get(search)
-        for info1 in resp, new_info:
+        u_search= input("                                                    \033[32m \033[01m Information you want to search?:\33[0m ") 
+        if u_search in info: 
             print()
-            print(str("\033[01m\033[92mAge:\33[0m" ) + info1[0])
+            print(("\033[01m\033[92mAge:\33[0m" ) + info[u_search]['Age'])
             print()
-            print(str("\033[01m\033[92mGender:\33[0m ") + info1[1])
+            print(("\033[01m\033[92mGender:\33[0m ") + info[u_search]['Gender'])
             print()
-            print(str("\033[01m\033[92mStatus:\33[0m ") + info1[2])
+            print(("\033[01m\033[92mStatus:\33[0m ") + info[u_search]['Status'])
             print()
-            print(str("\033[01m\033[92mPhone Number:\33[0m ") + info1[3])
+            print(("\033[01m\033[92mPhone Number:\33[0m ") + info[u_search]['Phone Number'])
             print()
-            print(str("\033[01m\033[92mAddress: \33[0m") + info1[4])
+            print(("\033[01m\033[92mAddress: \33[0m") + info[u_search]['Address'])
             print()
-            print(str("\033[01m\033[92mOccupation:\33[0m ") + info1[5])
+            print(("\033[01m\033[92mOccupation:\33[0m ") + info[u_search]['Occupation'])
             print
-            break
-        
+        else:
+            print()
+            print("No Record Found!")
         
 
 # Option 3
@@ -87,8 +85,8 @@ while True:
         elif user_in == "n" :
             print()
             continue
-    else:
-        print("\033[31m                                                         You must choose between 1-3 only\33[0m")
+        else:
+            print("\033[31m                                                         You must choose between 1-3 only\33[0m")
         
         
 
