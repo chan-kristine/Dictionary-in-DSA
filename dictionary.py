@@ -76,12 +76,19 @@ while True:
 
 # Option 3
     elif user_in == 3 :
-        print("Thank You for your Participation")
-        print("Have a Great Day!")
-    
+        user_in= input("Do you wish to exit? (y/n) : ")
+        print()
+        if user_in == "y":
+            print("Thank You for your Participation")  
+            print()         
+            print("Have a Great Day!")
+            print
+            break
+        elif user_in == "n" :
+            print()
+            continue
     else:
         print("\033[31m                                                         You must choose between 1-3 only\33[0m")
         
         
-
 
