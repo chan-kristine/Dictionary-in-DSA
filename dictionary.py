@@ -26,13 +26,19 @@ while True:
 # Option 1 - Add an Item from user
     if user_in == 1:
         add_in= int(input("                                                    How Many Infos do you want to Add?: "))  
-        u_name= input("Kindly input your Full Name: ")
+        u_name= input("Kindly input your Full Name: ").title()
+        print("")
         u_age=str(input("Kindly input your Age: "))
-        u_gender= str(input("Kindly input your Gender (F/M): "))
-        u_status=input("Kindly input your Status: ")
-        u_num = str(input("Kindly input your Phone Number:"))
-        u_add = input("Kindly Put your Address: ")
-        u_occu = (input("Kindly input your Occupation:" ))
+        print()
+        u_gender= str(input("Kindly input your Gender (F/M): ")).title()
+        print()
+        u_status=input("Kindly input your Status: ").title()
+        print()
+        u_num = str(input("Kindly input your Phone Number:")).title()
+        print()
+        u_add = input("Kindly input your Address: ").title()
+        print()
+        u_occu = (input("Kindly input your Occupation:" )).title()
         print ('\n')
         print ("                                                       Your Information has been saved!")
         print('\n')
@@ -44,4 +50,22 @@ while True:
         
              
 # Option 2
+    elif user_in == 2:
+        print("                                                    What do you want to search?: ")  
+        search= input().title()
+        resp=info.get(search)
+        print("Name of you want to find", search)
+        for info1 in resp, new_info:
+            print(str ("Age:" ) + info1[0])
+            print(str ("Gender: ") + info1[1])
+            print(str ("Status: ") + info1[2])
+            print(str ("Phone Number: ") + info1[3])
+            print(str ("Address: ") + info1[4])
+            print(str ("Occupation: ") + info1[5])
+            break
+        
+        
+
 # Option 3
+
+
